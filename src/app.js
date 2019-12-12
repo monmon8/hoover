@@ -1,15 +1,15 @@
 const navigateDirection = (hoover, direction) => {
     switch (direction) {
-        case 'n':
+        case 'N':
             hoover.y++
             break;
-        case 's':
+        case 'S':
             hoover.y--
             break;
-        case 'e':
+        case 'E':
             hoover.x++
             break;
-        case 'w':
+        case 'W':
             hoover.x--
             break;
         default:
@@ -18,10 +18,23 @@ const navigateDirection = (hoover, direction) => {
 }
 
 
-const moveHoover = (hoover, directions) => {
-    const directionList = directions.toLowerCase().split('')
-    directionList.map(direction => navigateDirection(hoover, direction))
-    return hoover
+const moveHoover = (hoover, directions, dirt) => {
+    let amountOfDirtCleaned = 0
+
+    for (let direction of directions) {
+        navigateDirection(hoover, direction)
+
+        const isOnDirst = dirt.find(patch => patch.x === hoover.x && patch.y === hoover.y)
+
+        if (isOnDirst) {
+            amountOfDirtCleaned++
+        }
+    }
+
+    return {
+        position: hoover,
+        amountOfDirtCleaned
+    }
 }
 
 module.exports = moveHoover
