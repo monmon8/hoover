@@ -23,11 +23,4 @@ Tests using
 
 ```bash
 yarn test
-
-```
-
-Or to see coverage
-
-```bash
-yarn test -- --coverage
 ```

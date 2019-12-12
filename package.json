@@ -4,8 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
-    "test -- --coverage": "jest --coverage"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "jest": "^24.9.0"
