@@ -1,4 +1,4 @@
-# Hoover
+# HOOVER
 
 ## Installation
 
